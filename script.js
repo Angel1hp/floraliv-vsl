@@ -17,17 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }, CTA_DELAY_MS);
 
 
-    // Simulación de reproducción de video
-    if(videoPlaceholder) {
-        videoPlaceholder.addEventListener('click', () => {
-            videoPlaceholder.innerHTML = `
-                <div style="width:100%; height:100%; display:flex; justify-content:center; align-items:center; background:#111; color:#fff; border-radius: 24px;">
-                    <p style="opacity: 0.7;">[Aquí se reproduce tu VSL]</p>
-                </div>
-            `;
-            
-            // Opcional: Mostrar el botón inmediatamente si hacen clic en el video.
-            // ctaContainer.classList.add('visible');
+    // --- LÓGICA DEL REPRODUCTOR VSL CUSTOMIZADO ---
+    const vslVideo = document.getElementById('vsl-video');
+    const vslWrapper = document.getElementById('vsl-wrapper');
+    const videoOverlay = document.getElementById('video-overlay');
+
+    if (vslVideo && vslWrapper && videoOverlay) {
+        // Al hacer clic en el contenedor (o en el overlay), reproducir/pausar
+        vslWrapper.addEventListener('click', () => {
+            if (vslVideo.paused) {
+                vslVideo.play();
+                videoOverlay.classList.add('hidden');
+                
+                // Mostrar controles mínimos al reproducir
+                vslVideo.setAttribute('controls', 'true');
+            } else {
+                vslVideo.pause();
+                videoOverlay.classList.remove('hidden');
+                vslVideo.removeAttribute('controls');
+            }
         });
     }
 });
