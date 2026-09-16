@@ -25,9 +25,18 @@
         <section class="vsl-section">
             <h2 class="headline">¿Pesadez y mala digestión todos los días? <br><span>Descubre cómo volver a sentirte ligero.</span></h2>
             
-            <div class="video-wrapper">
-                <!-- Aquí iría tu iframe de Vimeo o YouTube ocultando controles -->
-                <video src="https://young-heart-ca84.fuxion-salud.workers.dev/" controls controlsList="nodownload" style="width: 100%; height: 100%; border-radius: 24px; object-fit: cover; background: #000;"></video>
+            <div class="video-wrapper" id="vsl-wrapper">
+                <video id="vsl-video" src="https://young-heart-ca84.fuxion-salud.workers.dev" controlsList="nodownload" style="width: 100%; height: 100%; border-radius: 24px; object-fit: cover; background: #000;" playsinline></video>
+                
+                <!-- Overlay VSL Customizado (Para ocultar controles nativos) -->
+                <div class="custom-video-overlay" id="video-overlay">
+                    <div class="play-button-pulse">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px;">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <p class="overlay-text">Haz clic para descubrir el secreto</p>
+                </div>
             </div>
 
             <!-- Botón CTA (Oculto inicialmente por estrategia VSL) -->
