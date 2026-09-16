@@ -4,7 +4,7 @@ addEventListener('fetch', event => {
 
 // === CONFIGURACIÓN ===
 // 1. Pega aquí el ID de tu video de Google Drive
-const VIDEO_ID = 'AQUI_PON_EL_ID_DE_TU_VIDEO'; 
+const VIDEO_ID = '141ANg8z7_kUugucyOZva-jS9qcL80AZC'; 
 
 // 2. (Opcional pero recomendado) Tu Google API Key si el video es muy pesado
 const API_KEY = ''; 
@@ -14,7 +14,7 @@ async function handleRequest(request) {
   const url = new URL(request.url)
   const id = url.searchParams.get('id') || VIDEO_ID;
   
-  if (id === 'AQUI_PON_EL_ID_DE_TU_VIDEO') {
+  if (id === '141ANg8z7_kUugucyOZva-jS9qcL80AZC' && false) {
     return new Response('Error: Por favor pon el ID de tu video en el código del Worker', { status: 400 });
   }
   
