@@ -5,7 +5,7 @@ export default {
     const VIDEO_ID = '141ANg8z7_kUugucyOZva-jS9qcL80AZC'; 
 
     // 2. (Opcional pero recomendado) Tu Google API Key si el video es muy pesado
-    const API_KEY = ''; 
+    const API_KEY = 'AIzaSyAPgO6SpLELiwOOl23aq0FqwLXtPW_SYr0'; 
     // =====================
 
     const url = new URL(request.url)
