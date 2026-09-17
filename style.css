@@ -474,7 +474,7 @@ header {
 }
 
 /* ============================================ */
-/* BOTÓN FLOTANTE DE WHATSAPP                   */
+/* BOTÓN FLOTANTE DE WHATSAPP (SOLO ÍCONO)      */
 /* ============================================ */
 
 .whatsapp-float {
@@ -483,106 +483,58 @@ header {
     right: 25px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    background: #25D366;
-    color: #FFFFFF;
-    padding: 12px 20px 12px 14px;
-    border-radius: 50px;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 50%;
     text-decoration: none;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
     z-index: 9999;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     animation: whatsappPulse 2.5s infinite;
 }
 
 .whatsapp-float:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
-    background: #20BD5A;
+    transform: translateY(-3px) scale(1.08);
 }
 
 .whatsapp-icon {
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.45));
+    transition: filter 0.3s ease;
 }
 
-.whatsapp-text {
-    white-space: nowrap;
+.whatsapp-float:hover .whatsapp-icon {
+    filter: drop-shadow(0 10px 22px rgba(37, 211, 102, 0.65));
 }
 
 @keyframes whatsappPulse {
     0% {
-        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.6);
+        filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.45));
     }
     70% {
-        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4), 0 0 0 15px rgba(37, 211, 102, 0);
+        filter: drop-shadow(0 6px 25px rgba(37, 211, 102, 0.15));
     }
     100% {
-        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0);
+        filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.45));
     }
 }
 
-/* Responsive para celulares */
-@media (max-width: 600px) {
-    .headline {
-        font-size: 1.6rem;
-    }
-    
-    .logo {
-        font-size: 2rem;
-    }
-    
-    .cta-button {
-        width: 100%;
-        padding: 16px 20px;
-    }
-
-    .section-title {
-        font-size: 1.4rem;
-    }
-
-    .section-text {
-        font-size: 0.95rem;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .solution-list li {
-        font-size: 0.9rem;
-    }
-
-    .faq-item summary {
-        font-size: 0.9rem;
-    }
-}
-
+/* Responsive móvil */
 @media (max-width: 480px) {
     .whatsapp-float {
         bottom: 18px;
         right: 18px;
-        padding: 10px;
-        border-radius: 50%;
-    }
-
-    .whatsapp-text {
-        display: none;
+        width: 55px;
+        height: 55px;
     }
 
     .whatsapp-icon {
-        width: 32px;
-        height: 32px;
+        width: 55px;
+        height: 55px;
     }
 }
 }
