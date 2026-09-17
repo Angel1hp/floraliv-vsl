@@ -505,9 +505,11 @@ header {
 }
 
 .whatsapp-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
+    object-fit: contain;
+    display: block;
 }
 
 .whatsapp-text {
@@ -566,12 +568,11 @@ header {
     }
 }
 
-/* Responsive: solo ícono en móviles muy pequeños */
 @media (max-width: 480px) {
     .whatsapp-float {
         bottom: 18px;
         right: 18px;
-        padding: 12px;
+        padding: 10px;
         border-radius: 50%;
     }
 
@@ -580,7 +581,8 @@ header {
     }
 
     .whatsapp-icon {
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
     }
+}
 }
