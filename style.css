@@ -474,7 +474,7 @@ header {
 }
 
 /* ============================================ */
-/* BOTÓN FLOTANTE DE WHATSAPP (SOLO ÍCONO)      */
+/* BOTÓN FLOTANTE DE WHATSAPP                   */
 /* ============================================ */
 
 .whatsapp-float {
@@ -482,12 +482,10 @@ header {
     bottom: 25px;
     right: 25px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    border-radius: 50%;
+    gap: 4px;
     text-decoration: none;
     z-index: 9999;
     transition: transform 0.3s ease;
@@ -495,46 +493,101 @@ header {
 }
 
 .whatsapp-float:hover {
-    transform: translateY(-3px) scale(1.08);
+    transform: translateY(-3px) scale(1.06);
 }
 
 .whatsapp-icon {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.45));
+    filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.5));
     transition: filter 0.3s ease;
 }
 
 .whatsapp-float:hover .whatsapp-icon {
-    filter: drop-shadow(0 10px 22px rgba(37, 211, 102, 0.65));
+    filter: drop-shadow(0 10px 22px rgba(37, 211, 102, 0.7));
+}
+
+.whatsapp-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: #25D366;
+    padding: 6px 14px;
+    border-radius: 50px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    letter-spacing: 0.3px;
 }
 
 @keyframes whatsappPulse {
     0% {
-        filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.45));
+        filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.5));
     }
     70% {
-        filter: drop-shadow(0 6px 25px rgba(37, 211, 102, 0.15));
+        filter: drop-shadow(0 6px 28px rgba(37, 211, 102, 0.15));
     }
     100% {
-        filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.45));
+        filter: drop-shadow(0 6px 15px rgba(37, 211, 102, 0.5));
     }
 }
 
-/* Responsive móvil */
+/* Responsive para celulares */
+@media (max-width: 600px) {
+    .headline {
+        font-size: 1.6rem;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        padding: 16px 20px;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .section-text {
+        font-size: 0.95rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-list li {
+        font-size: 0.9rem;
+    }
+
+    .faq-item summary {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive móvil para WhatsApp */
 @media (max-width: 480px) {
     .whatsapp-float {
         bottom: 18px;
         right: 18px;
-        width: 55px;
-        height: 55px;
     }
 
     .whatsapp-icon {
-        width: 55px;
-        height: 55px;
+        width: 70px;
+        height: 70px;
     }
-}
+
+    .whatsapp-text {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
 }
